@@ -1,0 +1,22 @@
+# Active Oberon compiler output
+*.Gof*
+*.Sym*
+
+# AI
+AGENTS.md
+CLAUDE.md
+SESSION.md
+.codex/
+.claude/
+scratch/
+
+video/
+*.log
+
+# Project-specific
+array-bench
+array-math-bench
+__pycache__/
+*.py[cod]
+/comparison/build/
+/comparison/evidence/

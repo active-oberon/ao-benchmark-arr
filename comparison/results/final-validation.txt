@@ -1,0 +1,1 @@
+PASS: all 16 benchmark records match their logs; sums verified; padded-output parser verified; source hashes and eight-worker copy verified.

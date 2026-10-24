@@ -1,0 +1,87 @@
+Zig array worker
+0000000001021b90 <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn>:
+ 1021b9f:	74 13                	je     1021bb4 <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn+0x24>
+ 1021ba8:	73 12                	jae    1021bbc <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn+0x2c>
+ 1021baf:	e9 d4 00 00 00       	jmp    1021c88 <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn+0xf8>
+ 1021bb7:	e9 d8 00 00 00       	jmp    1021c94 <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn+0x104>
+ 1021bc0:	73 0a                	jae    1021bcc <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn+0x3c>
+ 1021bc7:	e9 7f 00 00 00       	jmp    1021c4b <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn+0xbb>
+ 1021bf0:	c4 a1 7d fe 04 82    	vpaddd (%rdx,%r8,4),%ymm0,%ymm0
+ 1021bf6:	c4 a1 75 fe 4c 82 20 	vpaddd 0x20(%rdx,%r8,4),%ymm1,%ymm1
+ 1021bfd:	c4 a1 6d fe 54 82 40 	vpaddd 0x40(%rdx,%r8,4),%ymm2,%ymm2
+ 1021c04:	c4 a1 65 fe 5c 82 60 	vpaddd 0x60(%rdx,%r8,4),%ymm3,%ymm3
+ 1021c12:	75 dc                	jne    1021bf0 <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn+0x60>
+ 1021c14:	c5 f5 fe c0          	vpaddd %ymm0,%ymm1,%ymm0
+ 1021c18:	c5 e5 fe ca          	vpaddd %ymm2,%ymm3,%ymm1
+ 1021c1c:	c5 f5 fe c0          	vpaddd %ymm0,%ymm1,%ymm0
+ 1021c20:	c4 e3 7d 39 c1 01    	vextracti128 $0x1,%ymm0,%xmm1
+ 1021c26:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+ 1021c2f:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+ 1021c38:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+ 1021c44:	74 4e                	je     1021c94 <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn+0x104>
+ 1021c49:	74 3d                	je     1021c88 <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn+0xf8>
+ 1021c60:	c4 a1 79 fe 04 8a    	vpaddd (%rdx,%r9,4),%xmm0,%xmm0
+ 1021c6d:	75 f1                	jne    1021c60 <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn+0xd0>
+ 1021c74:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+ 1021c7d:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+ 1021c86:	eb 07                	jmp    1021c8f <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn+0xff>
+ 1021c92:	75 f4                	jne    1021c88 <Thread.PosixThreadImpl.spawn__anon_5255.Instance.entryFn+0xf8>
+ 1021c97:	c5 f8 77             	vzeroupper
+ 1021c9a:	e8 01 f8 04 00       	call   10714a0 <free@plt>
+
+Rust process_mt worker
+000000000001c6e0 <_RINvNtNtCs6ZjlLoI6YmX_3std3sys9backtrace28___rust_begin_short_backtraceNCNCNvCs9a1VVJ8qoaN_4main10process_mt00lEB1d_>:
+   1c6e3:	74 0f                	je     1c6f4 <_RINvNtNtCs6ZjlLoI6YmX_3std3sys9backtrace28___rust_begin_short_backtraceNCNCNvCs9a1VVJ8qoaN_4main10process_mt00lEB1d_+0x14>
+   1c6e9:	73 0c                	jae    1c6f7 <_RINvNtNtCs6ZjlLoI6YmX_3std3sys9backtrace28___rust_begin_short_backtraceNCNCNvCs9a1VVJ8qoaN_4main10process_mt00lEB1d_+0x17>
+   1c6ef:	e9 c2 00 00 00       	jmp    1c7b6 <_RINvNtNtCs6ZjlLoI6YmX_3std3sys9backtrace28___rust_begin_short_backtraceNCNCNvCs9a1VVJ8qoaN_4main10process_mt00lEB1d_+0xd6>
+   1c6fb:	73 06                	jae    1c703 <_RINvNtNtCs6ZjlLoI6YmX_3std3sys9backtrace28___rust_begin_short_backtraceNCNCNvCs9a1VVJ8qoaN_4main10process_mt00lEB1d_+0x23>
+   1c701:	eb 74                	jmp    1c777 <_RINvNtNtCs6ZjlLoI6YmX_3std3sys9backtrace28___rust_begin_short_backtraceNCNCNvCs9a1VVJ8qoaN_4main10process_mt00lEB1d_+0x97>
+   1c720:	c5 fd fe 04 87       	vpaddd (%rdi,%rax,4),%ymm0,%ymm0
+   1c725:	c5 f5 fe 4c 87 20    	vpaddd 0x20(%rdi,%rax,4),%ymm1,%ymm1
+   1c72b:	c5 ed fe 54 87 40    	vpaddd 0x40(%rdi,%rax,4),%ymm2,%ymm2
+   1c731:	c5 e5 fe 5c 87 60    	vpaddd 0x60(%rdi,%rax,4),%ymm3,%ymm3
+   1c73e:	75 e0                	jne    1c720 <_RINvNtNtCs6ZjlLoI6YmX_3std3sys9backtrace28___rust_begin_short_backtraceNCNCNvCs9a1VVJ8qoaN_4main10process_mt00lEB1d_+0x40>
+   1c740:	c5 f5 fe c0          	vpaddd %ymm0,%ymm1,%ymm0
+   1c744:	c5 e5 fe ca          	vpaddd %ymm2,%ymm3,%ymm1
+   1c748:	c5 f5 fe c0          	vpaddd %ymm0,%ymm1,%ymm0
+   1c74c:	c4 e3 7d 39 c1 01    	vextracti128 $0x1,%ymm0,%xmm1
+   1c752:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+   1c75b:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+   1c764:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+   1c76f:	74 50                	je     1c7c1 <_RINvNtNtCs6ZjlLoI6YmX_3std3sys9backtrace28___rust_begin_short_backtraceNCNCNvCs9a1VVJ8qoaN_4main10process_mt00lEB1d_+0xe1>
+   1c775:	74 3f                	je     1c7b6 <_RINvNtNtCs6ZjlLoI6YmX_3std3sys9backtrace28___rust_begin_short_backtraceNCNCNvCs9a1VVJ8qoaN_4main10process_mt00lEB1d_+0xd6>
+   1c790:	c5 f9 fe 04 97       	vpaddd (%rdi,%rdx,4),%xmm0,%xmm0
+   1c79c:	75 f2                	jne    1c790 <_RINvNtNtCs6ZjlLoI6YmX_3std3sys9backtrace28___rust_begin_short_backtraceNCNCNvCs9a1VVJ8qoaN_4main10process_mt00lEB1d_+0xb0>
+   1c7a3:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+   1c7ac:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+   1c7b4:	eb 06                	jmp    1c7bc <_RINvNtNtCs6ZjlLoI6YmX_3std3sys9backtrace28___rust_begin_short_backtraceNCNCNvCs9a1VVJ8qoaN_4main10process_mt00lEB1d_+0xdc>
+   1c7bf:	75 f5                	jne    1c7b6 <_RINvNtNtCs6ZjlLoI6YmX_3std3sys9backtrace28___rust_begin_short_backtraceNCNCNvCs9a1VVJ8qoaN_4main10process_mt00lEB1d_+0xd6>
+   1c7c1:	c5 f8 77             	vzeroupper
+
+C SIMD worker
+00000000000016e0 <worker>:
+    16ee:	0f 86 ac 01 00 00    	jbe    18a0 <worker+0x1c0>
+    1740:	c5 d9 fe 08          	vpaddd (%rax),%xmm4,%xmm1
+    1744:	c5 d1 fe 50 10       	vpaddd 0x10(%rax),%xmm5,%xmm2
+    174d:	c5 c9 fe 40 e0       	vpaddd -0x20(%rax),%xmm6,%xmm0
+    1752:	c5 c1 fe 58 f0       	vpaddd -0x10(%rax),%xmm7,%xmm3
+    176a:	75 d4                	jne    1740 <worker+0x60>
+    176c:	c5 f1 fe ca          	vpaddd %xmm2,%xmm1,%xmm1
+    1770:	c5 f9 fe c3          	vpaddd %xmm3,%xmm0,%xmm0
+    1778:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+    1789:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+    1792:	c5 f9 fe c1          	vpaddd %xmm1,%xmm0,%xmm0
+    179f:	0f 83 11 01 00 00    	jae    18b6 <worker+0x1d6>
+    17b3:	0f 86 07 01 00 00    	jbe    18c0 <worker+0x1e0>
+    17c6:	c4 e3 7d 39 c8 01    	vextracti128 $0x1,%ymm1,%xmm0
+    17de:	c4 e3 7d 39 c1 01    	vextracti128 $0x1,%ymm0,%xmm1
+    1800:	0f 84 aa 00 00 00    	je     18b0 <worker+0x1d0>
+    1806:	c5 f8 77             	vzeroupper
+    1819:	0f 86 b3 00 00 00    	jbe    18d2 <worker+0x1f2>
+    1853:	74 38                	je     188d <worker+0x1ad>
+    1872:	73 19                	jae    188d <worker+0x1ad>
+    1883:	73 08                	jae    188d <worker+0x1ad>
+    18aa:	e9 d5 fe ff ff       	jmp    1784 <worker+0xa4>
+    18b3:	c5 f8 77             	vzeroupper
+    18cd:	e9 37 ff ff ff       	jmp    1809 <worker+0x129>
+    18d5:	eb 85                	jmp    185c <worker+0x17c>

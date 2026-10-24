@@ -1,0 +1,9 @@
+2026-10-09T10:23:26.059743+00:00
+cpu0: governor=powersave, current_kHz=4599999
+cpu1: governor=powersave, current_kHz=4600002
+cpu2: governor=powersave, current_kHz=4599996
+cpu3: governor=powersave, current_kHz=4600003
+cpu4: governor=powersave, current_kHz=4600001
+cpu5: governor=powersave, current_kHz=4600001
+cpu6: governor=powersave, current_kHz=4599997
+cpu7: governor=powersave, current_kHz=4599997

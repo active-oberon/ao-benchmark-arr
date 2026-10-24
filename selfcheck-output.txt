@@ -1,0 +1,4 @@
+FoxArrayBase: setting runtime library (semi-optimized) default methods.
+ArrayBaseOptimized: installing runtime library optimizations:ASM SSE SSE2 SSE3  done.
+PrecisionTimer: timer tick frequency is 1000000000 Hz
+PASS: SUM and AVX2 ranges, empty arrays, repeated parallel sums, mean and median.

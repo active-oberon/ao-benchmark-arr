@@ -1,0 +1,61 @@
+#include "textflag.h"
+
+TEXT ·sumNEON(SB), NOSPLIT, $0-32
+	MOVQ arr_base+0(FP), SI
+	MOVQ arr_len+8(FP), CX
+	PXOR X0, X0
+	PXOR X1, X1
+	PXOR X2, X2
+	PXOR X3, X3
+loop16:
+	CMPQ CX, $16
+	JL reduce
+	MOVOU 0(SI), X4
+	MOVOU 16(SI), X5
+	MOVOU 32(SI), X6
+	MOVOU 48(SI), X7
+	PADDL X4, X0
+	PADDL X5, X1
+	PADDL X6, X2
+	PADDL X7, X3
+	ADDQ $64, SI
+	SUBQ $16, CX
+	JMP loop16
+reduce:
+	PADDL X1, X0
+	PADDL X3, X2
+	PADDL X2, X0
+loop4:
+	CMPQ CX, $4
+	JL horizontal
+	MOVOU (SI), X1
+	PADDL X1, X0
+	ADDQ $16, SI
+	SUBQ $4, CX
+	JMP loop4
+horizontal:
+	MOVD X0, AX
+	MOVLQSX AX, AX
+	PSRLDQ $4, X0
+	MOVD X0, DX
+	MOVLQSX DX, DX
+	ADDQ DX, AX
+	PSRLDQ $4, X0
+	MOVD X0, DX
+	MOVLQSX DX, DX
+	ADDQ DX, AX
+	PSRLDQ $4, X0
+	MOVD X0, DX
+	MOVLQSX DX, DX
+	ADDQ DX, AX
+tail:
+	TESTQ CX, CX
+	JZ done
+	MOVLQSX (SI), DX
+	ADDQ DX, AX
+	ADDQ $4, SI
+	DECQ CX
+	JMP tail
+done:
+	MOVQ AX, ret+24(FP)
+	RET

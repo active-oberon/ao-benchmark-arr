@@ -1,0 +1,19 @@
+PrecisionTimer: timer tick frequency is 1000000000 Hz
+FoxArrayBase: setting runtime library (semi-optimized) default methods.
+ArrayBaseOptimized: installing runtime library optimizations:ASM SSE SSE2 SSE3  done.
+Kernel: math arrays / SUM
+Elements: 200000000; bytes: 800000000
+Calibration: threads / median ms
+1 /   324.271
+2 /   163.233
+3 /   109.395
+4 /   82.103
+5 /   65.855
+6 /   54.780
+7 /   47.462
+8 /   51.955
+Threads: 7; iterations: 500
+Average time:   49.213 ms
+Median time:   47.524 ms
+Read bandwidth:   16.834 GB/s
+Sum: 400000000
