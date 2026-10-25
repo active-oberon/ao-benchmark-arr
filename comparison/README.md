@@ -71,13 +71,28 @@ preserved. Generated sources and binaries are under `build/`.
 
 ## Measurement protocol and limits
 
-With eight workers, built-in Active Oberon `SUM` took 44.834 ms versus
-25.020 ms for its AVX2 kernel; the other implementations took about 25-26 ms.
-The tested MiniA2 `SIGNED32` reduction uses a scalar loop with one accumulator,
-whereas the explicit kernel uses four independent AVX2 accumulators. Rust and
-Zig receive vectorized loops from their compilers. The gap concerns this
-library implementation, not a requirement to write application code in assembly.
-See [RESULTS.md](RESULTS.md) for the measurements and memory-bandwidth inference.
+The 2026-10-09 SDK used a scalar `SIGNED32` reduction: eight-worker `SUM` took
+44.834 ms versus 25.020 ms for the explicit AVX2 kernel. The MiniA2 optimization
+tested on 2026-10-25 installs a contiguous SSE2 reduction with four independent
+accumulators. With eight workers, `SUM` now takes 24.922 ms versus 25.362 ms for
+AVX2; the fresh pre-change `SUM` baseline was 44.071 ms. Application code still
+uses `SUM(...)`. Rust and Zig receive vectorized loops from their compilers.
+See [RESULTS.md](RESULTS.md) for both dated runs and the memory-bandwidth inference.
+
+The repeat's outputs and MiniA2 source/SDK hashes are in
+[`results/sum-optimization/`](results/sum-optimization/); the original outputs
+remain directly under `results/`. To repeat into the separate directory after
+rebuilding MiniA2 and running `bash comparison/build.sh`:
+
+```sh
+python3 - <<'PY'
+from comparison import run
+run.RESULTS = run.ROOT / 'comparison/results/sum-optimization'
+run.RESULTS.mkdir(parents=True, exist_ok=True)
+run.check()
+run.run()
+PY
+```
 
 `run.py run` executes one program at a time on this machine:
 

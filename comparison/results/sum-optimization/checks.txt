@@ -1,0 +1,720 @@
+ok  	_/home/andrejjj/Projects/A2/ao-benchmark-arr/comparison/go	0.001s
+
+C-control: elements=0, workers=3
+Workers: 3
+First time: 0.108 ms
+Average time: 0.092 ms
+Median time: 0.086 ms
+Sum: 0
+
+C-control: elements=1, workers=3
+Workers: 3
+First time: 0.094 ms
+Average time: 0.088 ms
+Median time: 0.088 ms
+Sum: 2
+
+C-control: elements=3, workers=3
+Workers: 3
+First time: 0.086 ms
+Average time: 0.085 ms
+Median time: 0.084 ms
+Sum: 6
+
+C-control: elements=4, workers=3
+Workers: 3
+First time: 0.104 ms
+Average time: 0.112 ms
+Median time: 0.104 ms
+Sum: 8
+
+C-control: elements=7, workers=3
+Workers: 3
+First time: 0.081 ms
+Average time: 0.060 ms
+Median time: 0.070 ms
+Sum: 14
+
+C-control: elements=8, workers=3
+Workers: 3
+First time: 0.169 ms
+Average time: 0.104 ms
+Median time: 0.082 ms
+Sum: 16
+
+C-control: elements=15, workers=3
+Workers: 3
+First time: 0.094 ms
+Average time: 0.082 ms
+Median time: 0.083 ms
+Sum: 30
+
+C-control: elements=16, workers=3
+Workers: 3
+First time: 0.102 ms
+Average time: 0.087 ms
+Median time: 0.086 ms
+Sum: 32
+
+C-control: elements=17, workers=3
+Workers: 3
+First time: 0.104 ms
+Average time: 0.088 ms
+Median time: 0.090 ms
+Sum: 34
+
+C-control: elements=31, workers=3
+Workers: 3
+First time: 0.088 ms
+Average time: 0.073 ms
+Median time: 0.071 ms
+Sum: 62
+
+C-control: elements=32, workers=3
+Workers: 3
+First time: 0.091 ms
+Average time: 0.089 ms
+Median time: 0.091 ms
+Sum: 64
+
+C-control: elements=33, workers=3
+Workers: 3
+First time: 0.106 ms
+Average time: 0.085 ms
+Median time: 0.079 ms
+Sum: 66
+
+C-control: elements=63, workers=3
+Workers: 3
+First time: 0.090 ms
+Average time: 0.082 ms
+Median time: 0.080 ms
+Sum: 126
+
+C-control: elements=65, workers=3
+Workers: 3
+First time: 0.071 ms
+Average time: 0.070 ms
+Median time: 0.071 ms
+Sum: 130
+
+C-control: elements=101, workers=3
+Workers: 3
+First time: 0.069 ms
+Average time: 0.063 ms
+Median time: 0.062 ms
+Sum: 202
+
+C-control: elements=3, workers=8
+Workers: 8
+First time: 0.144 ms
+Average time: 0.118 ms
+Median time: 0.127 ms
+Sum: 6
+
+C-control: elements=33, workers=1
+Workers: 1
+First time: 0.034 ms
+Average time: 0.042 ms
+Median time: 0.045 ms
+Sum: 66
+
+Rust: elements=0, workers=3
+Workers: 3
+First time: 0.000 ms
+Average time: 0.000 ms
+Median time: 0.000 ms
+Sum: 0
+
+Rust: elements=1, workers=3
+Workers: 3
+First time: 0.117 ms
+Average time: 0.101 ms
+Median time: 0.097 ms
+Sum: 2
+
+Rust: elements=3, workers=3
+Workers: 3
+First time: 0.108 ms
+Average time: 0.087 ms
+Median time: 0.090 ms
+Sum: 6
+
+Rust: elements=4, workers=3
+Workers: 3
+First time: 0.118 ms
+Average time: 0.081 ms
+Median time: 0.084 ms
+Sum: 8
+
+Rust: elements=7, workers=3
+Workers: 3
+First time: 0.100 ms
+Average time: 0.116 ms
+Median time: 0.100 ms
+Sum: 14
+
+Rust: elements=8, workers=3
+Workers: 3
+First time: 0.121 ms
+Average time: 0.112 ms
+Median time: 0.121 ms
+Sum: 16
+
+Rust: elements=15, workers=3
+Workers: 3
+First time: 0.108 ms
+Average time: 0.088 ms
+Median time: 0.081 ms
+Sum: 30
+
+Rust: elements=16, workers=3
+Workers: 3
+First time: 0.116 ms
+Average time: 0.087 ms
+Median time: 0.074 ms
+Sum: 32
+
+Rust: elements=17, workers=3
+Workers: 3
+First time: 0.099 ms
+Average time: 0.082 ms
+Median time: 0.077 ms
+Sum: 34
+
+Rust: elements=31, workers=3
+Workers: 3
+First time: 0.098 ms
+Average time: 0.112 ms
+Median time: 0.098 ms
+Sum: 62
+
+Rust: elements=32, workers=3
+Workers: 3
+First time: 0.110 ms
+Average time: 0.105 ms
+Median time: 0.104 ms
+Sum: 64
+
+Rust: elements=33, workers=3
+Workers: 3
+First time: 0.131 ms
+Average time: 0.104 ms
+Median time: 0.092 ms
+Sum: 66
+
+Rust: elements=63, workers=3
+Workers: 3
+First time: 0.119 ms
+Average time: 0.089 ms
+Median time: 0.078 ms
+Sum: 126
+
+Rust: elements=65, workers=3
+Workers: 3
+First time: 0.106 ms
+Average time: 0.077 ms
+Median time: 0.087 ms
+Sum: 130
+
+Rust: elements=101, workers=3
+Workers: 3
+First time: 0.135 ms
+Average time: 0.093 ms
+Median time: 0.073 ms
+Sum: 202
+
+Rust: elements=3, workers=8
+Workers: 8
+First time: 0.148 ms
+Average time: 0.160 ms
+Median time: 0.148 ms
+Sum: 6
+
+Rust: elements=33, workers=1
+Workers: 1
+First time: 0.110 ms
+Average time: 0.065 ms
+Median time: 0.060 ms
+Sum: 66
+
+Zig: elements=0, workers=3
+Workers: 3
+First time: 0.117 ms
+Average time: 0.110 ms
+Median time: 0.110 ms
+Sum: 0
+
+Zig: elements=1, workers=3
+Workers: 3
+First time: 0.105 ms
+Average time: 0.109 ms
+Median time: 0.110 ms
+Sum: 2
+
+Zig: elements=3, workers=3
+Workers: 3
+First time: 0.111 ms
+Average time: 0.092 ms
+Median time: 0.085 ms
+Sum: 6
+
+Zig: elements=4, workers=3
+Workers: 3
+First time: 0.117 ms
+Average time: 0.092 ms
+Median time: 0.104 ms
+Sum: 8
+
+Zig: elements=7, workers=3
+Workers: 3
+First time: 0.108 ms
+Average time: 0.079 ms
+Median time: 0.076 ms
+Sum: 14
+
+Zig: elements=8, workers=3
+Workers: 3
+First time: 0.094 ms
+Average time: 0.089 ms
+Median time: 0.094 ms
+Sum: 16
+
+Zig: elements=15, workers=3
+Workers: 3
+First time: 0.075 ms
+Average time: 0.074 ms
+Median time: 0.075 ms
+Sum: 30
+
+Zig: elements=16, workers=3
+Workers: 3
+First time: 0.094 ms
+Average time: 0.085 ms
+Median time: 0.081 ms
+Sum: 32
+
+Zig: elements=17, workers=3
+Workers: 3
+First time: 0.110 ms
+Average time: 0.098 ms
+Median time: 0.102 ms
+Sum: 34
+
+Zig: elements=31, workers=3
+Workers: 3
+First time: 0.103 ms
+Average time: 0.081 ms
+Median time: 0.074 ms
+Sum: 62
+
+Zig: elements=32, workers=3
+Workers: 3
+First time: 0.119 ms
+Average time: 0.101 ms
+Median time: 0.100 ms
+Sum: 64
+
+Zig: elements=33, workers=3
+Workers: 3
+First time: 0.095 ms
+Average time: 0.137 ms
+Median time: 0.095 ms
+Sum: 66
+
+Zig: elements=63, workers=3
+Workers: 3
+First time: 0.117 ms
+Average time: 0.108 ms
+Median time: 0.107 ms
+Sum: 126
+
+Zig: elements=65, workers=3
+Workers: 3
+First time: 0.107 ms
+Average time: 0.091 ms
+Median time: 0.087 ms
+Sum: 130
+
+Zig: elements=101, workers=3
+Workers: 3
+First time: 0.104 ms
+Average time: 0.080 ms
+Median time: 0.077 ms
+Sum: 202
+
+Zig: elements=3, workers=8
+Workers: 8
+First time: 0.191 ms
+Average time: 0.158 ms
+Median time: 0.168 ms
+Sum: 6
+
+Zig: elements=33, workers=1
+Workers: 1
+First time: 0.112 ms
+Average time: 0.091 ms
+Median time: 0.086 ms
+Sum: 66
+
+Go: elements=0, workers=3
+Workers: 3
+First time: 0.006 ms
+Average time: 0.003 ms
+Median time: 0.001 ms
+Sum: 0
+
+Go: elements=1, workers=3
+Workers: 3
+First time: 0.004 ms
+Average time: 0.002 ms
+Median time: 0.001 ms
+Sum: 2
+
+Go: elements=3, workers=3
+Workers: 3
+First time: 0.006 ms
+Average time: 0.053 ms
+Median time: 0.006 ms
+Sum: 6
+
+Go: elements=4, workers=3
+Workers: 3
+First time: 0.005 ms
+Average time: 0.002 ms
+Median time: 0.001 ms
+Sum: 8
+
+Go: elements=7, workers=3
+Workers: 3
+First time: 0.005 ms
+Average time: 0.002 ms
+Median time: 0.001 ms
+Sum: 14
+
+Go: elements=8, workers=3
+Workers: 3
+First time: 0.005 ms
+Average time: 0.002 ms
+Median time: 0.001 ms
+Sum: 16
+
+Go: elements=15, workers=3
+Workers: 3
+First time: 0.005 ms
+Average time: 0.052 ms
+Median time: 0.005 ms
+Sum: 30
+
+Go: elements=16, workers=3
+Workers: 3
+First time: 0.005 ms
+Average time: 0.002 ms
+Median time: 0.001 ms
+Sum: 32
+
+Go: elements=17, workers=3
+Workers: 3
+First time: 0.005 ms
+Average time: 0.003 ms
+Median time: 0.002 ms
+Sum: 34
+
+Go: elements=31, workers=3
+Workers: 3
+First time: 0.004 ms
+Average time: 0.002 ms
+Median time: 0.001 ms
+Sum: 62
+
+Go: elements=32, workers=3
+Workers: 3
+First time: 0.005 ms
+Average time: 0.002 ms
+Median time: 0.001 ms
+Sum: 64
+
+Go: elements=33, workers=3
+Workers: 3
+First time: 0.004 ms
+Average time: 0.002 ms
+Median time: 0.001 ms
+Sum: 66
+
+Go: elements=63, workers=3
+Workers: 3
+First time: 0.005 ms
+Average time: 0.004 ms
+Median time: 0.005 ms
+Sum: 126
+
+Go: elements=65, workers=3
+Workers: 3
+First time: 0.005 ms
+Average time: 0.002 ms
+Median time: 0.001 ms
+Sum: 130
+
+Go: elements=101, workers=3
+Workers: 3
+First time: 0.005 ms
+Average time: 0.003 ms
+Median time: 0.001 ms
+Sum: 202
+
+Go: elements=3, workers=8
+Workers: 8
+First time: 0.012 ms
+Average time: 0.007 ms
+Median time: 0.005 ms
+Sum: 6
+
+Go: elements=33, workers=1
+Workers: 1
+First time: 0.004 ms
+Average time: 0.002 ms
+Median time: 0.001 ms
+Sum: 66
+
+Java: elements=0, workers=3
+Workers: 3
+First time: 5.071 ms
+Average time: 1.697 ms
+Median time: 0.013 ms
+Sum: 0
+
+Java: elements=1, workers=3
+Workers: 3
+First time: 5.084 ms
+Average time: 1.702 ms
+Median time: 0.013 ms
+Sum: 2
+
+Java: elements=3, workers=3
+Workers: 3
+First time: 5.961 ms
+Average time: 2.060 ms
+Median time: 0.176 ms
+Sum: 6
+
+Java: elements=4, workers=3
+Workers: 3
+First time: 6.054 ms
+Average time: 2.046 ms
+Median time: 0.046 ms
+Sum: 8
+
+Java: elements=7, workers=3
+Workers: 3
+First time: 6.256 ms
+Average time: 2.120 ms
+Median time: 0.063 ms
+Sum: 14
+
+Java: elements=8, workers=3
+Workers: 3
+First time: 6.284 ms
+Average time: 2.158 ms
+Median time: 0.134 ms
+Sum: 16
+
+Java: elements=15, workers=3
+Workers: 3
+First time: 6.154 ms
+Average time: 2.161 ms
+Median time: 0.178 ms
+Sum: 30
+
+Java: elements=16, workers=3
+Workers: 3
+First time: 6.504 ms
+Average time: 2.279 ms
+Median time: 0.201 ms
+Sum: 32
+
+Java: elements=17, workers=3
+Workers: 3
+First time: 6.871 ms
+Average time: 2.389 ms
+Median time: 0.230 ms
+Sum: 34
+
+Java: elements=31, workers=3
+Workers: 3
+First time: 6.147 ms
+Average time: 2.133 ms
+Median time: 0.176 ms
+Sum: 62
+
+Java: elements=32, workers=3
+Workers: 3
+First time: 6.141 ms
+Average time: 2.125 ms
+Median time: 0.167 ms
+Sum: 64
+
+Java: elements=33, workers=3
+Workers: 3
+First time: 6.438 ms
+Average time: 2.212 ms
+Median time: 0.140 ms
+Sum: 66
+
+Java: elements=63, workers=3
+Workers: 3
+First time: 6.444 ms
+Average time: 2.259 ms
+Median time: 0.220 ms
+Sum: 126
+
+Java: elements=65, workers=3
+Workers: 3
+First time: 6.106 ms
+Average time: 2.105 ms
+Median time: 0.156 ms
+Sum: 130
+
+Java: elements=101, workers=3
+Workers: 3
+First time: 6.526 ms
+Average time: 2.238 ms
+Median time: 0.116 ms
+Sum: 202
+
+Java: elements=3, workers=8
+Workers: 8
+First time: 5.942 ms
+Average time: 2.037 ms
+Median time: 0.131 ms
+Sum: 6
+
+Java: elements=33, workers=1
+Workers: 1
+First time: 5.487 ms
+Average time: 1.862 ms
+Median time: 0.053 ms
+Sum: 66
+
+Python-Cython: elements=0, workers=3
+Workers: 3
+First time: 0.074 ms
+Average time: 0.026 ms
+Median time: 0.002 ms
+Sum: 0
+
+Python-Cython: elements=1, workers=3
+Workers: 3
+First time: 0.075 ms
+Average time: 0.026 ms
+Median time: 0.002 ms
+Sum: 2
+
+Python-Cython: elements=3, workers=3
+Workers: 3
+First time: 0.088 ms
+Average time: 0.030 ms
+Median time: 0.002 ms
+Sum: 6
+
+Python-Cython: elements=4, workers=3
+Workers: 3
+First time: 0.076 ms
+Average time: 0.026 ms
+Median time: 0.002 ms
+Sum: 8
+
+Python-Cython: elements=7, workers=3
+Workers: 3
+First time: 0.077 ms
+Average time: 0.027 ms
+Median time: 0.002 ms
+Sum: 14
+
+Python-Cython: elements=8, workers=3
+Workers: 3
+First time: 0.091 ms
+Average time: 0.032 ms
+Median time: 0.002 ms
+Sum: 16
+
+Python-Cython: elements=15, workers=3
+Workers: 3
+First time: 0.088 ms
+Average time: 0.030 ms
+Median time: 0.002 ms
+Sum: 30
+
+Python-Cython: elements=16, workers=3
+Workers: 3
+First time: 0.072 ms
+Average time: 0.025 ms
+Median time: 0.002 ms
+Sum: 32
+
+Python-Cython: elements=17, workers=3
+Workers: 3
+First time: 0.073 ms
+Average time: 0.025 ms
+Median time: 0.002 ms
+Sum: 34
+
+Python-Cython: elements=31, workers=3
+Workers: 3
+First time: 0.075 ms
+Average time: 0.026 ms
+Median time: 0.002 ms
+Sum: 62
+
+Python-Cython: elements=32, workers=3
+Workers: 3
+First time: 0.093 ms
+Average time: 0.032 ms
+Median time: 0.002 ms
+Sum: 64
+
+Python-Cython: elements=33, workers=3
+Workers: 3
+First time: 0.076 ms
+Average time: 0.026 ms
+Median time: 0.002 ms
+Sum: 66
+
+Python-Cython: elements=63, workers=3
+Workers: 3
+First time: 0.072 ms
+Average time: 0.025 ms
+Median time: 0.002 ms
+Sum: 126
+
+Python-Cython: elements=65, workers=3
+Workers: 3
+First time: 0.086 ms
+Average time: 0.030 ms
+Median time: 0.002 ms
+Sum: 130
+
+Python-Cython: elements=101, workers=3
+Workers: 3
+First time: 0.078 ms
+Average time: 0.027 ms
+Median time: 0.002 ms
+Sum: 202
+
+Python-Cython: elements=3, workers=8
+Workers: 8
+First time: 14.150 ms
+Average time: 11.391 ms
+Median time: 14.150 ms
+Sum: 6
+
+Python-Cython: elements=33, workers=1
+Workers: 1
+First time: 0.003 ms
+Average time: 0.002 ms
+Median time: 0.001 ms
+Sum: 66
+
+FoxArrayBase: setting runtime library (semi-optimized) default methods.
+ArrayBaseOptimized: installing runtime library optimizations:ASM SSE SSE2 SSE3  done.
+PrecisionTimer: timer tick frequency is 1000000000 Hz
+PASS: SUM and AVX2 ranges, empty arrays, repeated parallel sums, mean and median.

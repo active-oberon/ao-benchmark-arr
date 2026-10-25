@@ -1,0 +1,5 @@
+Workers: default
+First time: 67.611 ms
+Average time: 26.892 ms
+Median time: 25.941 ms
+Sum: 400000000

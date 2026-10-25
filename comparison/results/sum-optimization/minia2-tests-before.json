@@ -1,0 +1,12 @@
+{
+  "total": 3,
+  "passed": 3,
+  "failed": 0,
+  "known": 0,
+  "fixed": 0,
+  "cases": [
+    {"status": "ok", "file": "FoxArrayBase.Test", "kind": "positive", "name": "SIGNED32 SUM empty arrays, lengths and unaligned slices"},
+    {"status": "ok", "file": "FoxArrayBase.Test", "kind": "positive", "name": "SIGNED32 SUM strided and multidimensional slices"},
+    {"status": "ok", "file": "FoxArrayBase.Test", "kind": "positive", "name": "SIGNED32 SUM independent lanes retain integer wraparound"}
+  ]
+}

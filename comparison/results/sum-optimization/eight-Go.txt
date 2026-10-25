@@ -1,0 +1,5 @@
+Workers: 8
+First time: 27.627 ms
+Average time: 26.071 ms
+Median time: 25.056 ms
+Sum: 400000000

@@ -16,25 +16,30 @@ sum is 400,000,000. Allocation and initialization happen before measurement.
   32 integers per loop. It accepts unaligned data and handles the remaining
   elements without reading beyond the requested range.
 
-In the local MiniA2 SDK, the `SUM` operator for `SIGNED32` calls the scalar
-`SumALLoop` in `../minia2/source/FoxArrayBase.Mod`. Mathematical array syntax
-does not automatically make this particular reduction use SIMD instructions.
-`FoxArrayBaseOptimized` is linked for the standard array runtime optimizations;
-its SSE optimizations do not replace this integer reduction.
+The original MiniA2 SDK used the scalar `SumALLoop` for `SIGNED32` reductions.
+With eight workers on the tested Intel Core i7-9700K, that version took
+44.834 ms versus 25.020 ms for the AVX2 kernel on 2026-10-09.
 
-With eight workers on the tested Intel Core i7-9700K, built-in `SUM` took
-44.834 ms versus 25.020 ms for the AVX2 kernel, about a 1.8x difference.
-The scalar loop adds one integer at a time to a single accumulator; the AVX2
-kernel uses four independent vector accumulators and processes 32 integers
-per main-loop iteration. Rust and Zig obtain vector loops from their compilers
-without handwritten assembly. This exposes a limitation of the tested MiniA2
-`SUM` implementation, not an inherent limitation of Active Oberon.
+The updated MiniA2 runtime tested on 2026-10-25 dispatches `SUM` through
+`FoxArrayBase.loopSumAL`. On AMD64, the installed `FoxArrayBaseOptimized` module
+selects an SSE2 kernel with four independent vector accumulators, processing
+16 integers per main-loop iteration. Unaligned input is supported; short arrays,
+tails and noncontiguous strides use scalar additions. Other targets retain the
+portable default, and the result keeps the existing `SIGNED32` wraparound.
+The application still writes `SUM(...)`; its mathematical-array code is unchanged.
+Rust and Zig obtain vector loops from their compilers without handwritten assembly.
+
+The repeat with eight workers measured **24.922 ms for built-in `SUM`**, down
+from a fresh pre-change baseline of **44.071 ms** (about **1.77x faster**).
+The explicit AVX2 kernel measured 25.362 ms in the same repeat; with automatic
+worker selection, `SUM` measured 23.933 ms and AVX2 23.958 ms. These small
+differences between the optimized kernels do not establish a reliable winner.
 
 The optimized implementations cluster around 25-26 ms, consistent with a
 memory-bandwidth limit when reading 800 MB per sum (about 32 GB/s at 25 ms).
 This limit is inferred from timings, not verified with hardware counters.
-Optimizing the library's `SUM` would let application code retain `SUM(...)`
-without its own assembly kernel. See [measurements and limits](comparison/RESULTS.md).
+See the [updated measurements and limits](comparison/RESULTS.md) for the effect
+of the library optimization and the exact MiniA2 source/SDK hashes used.
 
 Both modes share persistent active objects and synchronize with `EXCLUSIVE`
 and `AWAIT`. Each worker reads a disjoint range. Workers are created before

@@ -1,0 +1,64 @@
+Validation of the SIGNED32 SUM optimization (2026-10-25)
+
+MiniA2 builds:
+- task Linux64: PASS (776 modules).
+- task bundle: PASS; benchmarks use this rebuilt target/bundle/ob.
+- tests/bundle.sh --full --no-tar -o target/fullsdk target/Linux64: PASS.
+- tests/gen-a64-stdlib.sh: 396 modules; generated list unchanged.
+- task a64-stdlib: PASS, 396/396 modules.
+- FoxArrayBase and AMD64.FoxArrayBaseOptimized compiled for Win64: PASS.
+  An initial attempt found the old FoxArrayBase symbol before the freshly written
+  one (undeclared selector loopSumAL). Putting the fresh symbol directory first
+  and compiling the optimizer in a new process passed. Windows was not executed.
+
+Regression tests:
+- Before optimization, the three public SUM cases passed against the old SDK.
+- ob test FoxArrayBase.Test MathArrays.Execution.Test MathArrays.Compilation.Test:
+  37 cases, 33 passed, 0 failed, 4 known-failing on Linux AMD64 and on A64/QEMU.
+- All four new FoxArrayBase cases pass on both targets. They cover empty arrays,
+  lengths 0..129, offsets, positive public slice strides, multidimensional
+  traversal, integer lane and final-result wraparound, and direct-loop strides -2..2 with a
+  nonzero incoming partial sum. Installed/default/restored loops are exercised.
+- Native tests assert the AMD64 optimized loop differs from the portable default.
+- Negative public slice steps are rejected by the language (invalid step size);
+  reverse traversal is tested through the underlying reduction loop instead.
+- Known failures, unchanged from the suite baseline:
+  MathArrays.Execution.Test: driver tests (fill and compare arrays)
+  MathArrays.Execution.Test: correct use of ADDRESS OF and SYSTEM.VAL for tensors and open math arrays
+  MathArrays.Compilation.Test: variables and parameters of math array type
+  MathArrays.Compilation.Test: use of COMPLEX32 and COMPLEX64
+- JSON reports: minia2-tests-before.json, minia2-tests-native.json, minia2-tests-a64.json.
+
+Benchmark validation:
+- A2_OB=<rebuilt target/bundle/ob> bash comparison/build.sh: PASS.
+- comparison.run.check(), with RESULTS set to this directory: PASS.
+  Six recovered/control implementations: 17 boundary/partition cases each;
+  Go assembly tests and ArrayBench.Check also pass. Full output: checks.txt.
+- comparison.run.run(), with RESULTS set to this directory: PASS, all 16
+  500-sample batches (8,000 final timed sums). Per-batch outputs, timings.csv and environment.json are
+  stored here; environment.json records modified MiniA2 source and SDK hashes.
+- before-eight-SUM.txt: freshly linked with the pre-change SDK, median 44.071 ms.
+- before-eight-AVX2.txt: pre-change AVX2 control, median 24.467 ms.
+- After optimization: eight-worker SUM 24.922 ms; AVX2 25.362 ms.
+  Automatic selection: SUM 23.933 ms (5 workers); AVX2 23.958 ms (3 workers).
+- Original 2026-10-09 results in comparison/results/ were left unchanged.
+
+Registry:
+- std/math manifest synced from minia2 with tools/sync-std.py.
+- tools/gen-docs.py std/math: 9 module pages generated; only the new loopSumAL
+  declaration changes the published API page. Existing HTML IDs were preserved.
+- python3 tools/build_site.py: PASS, 43 packages and 562 module pages.
+- task registry BUILD_DIR=<native-only layout>: PASS for the rebuilt Linux64
+  payload, manifest sync, and 11 community package checks. Win64/ARMhf payload
+  checks skipped because their complete SDK builds were not refreshed.
+- No source imports or provided-module lists changed. Generated Win64/ARMhf lists
+  would drop modules absent from the older cross-builds; those changes were discarded.
+
+Limits:
+- This optimizes only SIGNED32 SUM on AMD64 when the optional optimizer is loaded.
+  Other targets and integer/floating-point types retain their existing kernels.
+- Tests on A64 use QEMU, not physical hardware. ARMhf and i386 were not executed.
+- Memory bandwidth remains an inference from timings, not a hardware-counter test.
+- Frequency and desktop scheduling remain under normal OS control.
+- Existing MiniA2 LSP edits and registry A2DB/MD2AO work were preserved.
+- Validation used the rebuilt checkout SDK; the installed SDK was not updated.

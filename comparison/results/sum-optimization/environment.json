@@ -1,0 +1,63 @@
+{
+  "started_utc": "2026-10-25T00:36:40.205960+00:00",
+  "elements": 200000000,
+  "iterations": 500,
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "versions": {
+    "gcc": "gcc (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+    "rust": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+    "zig": "0.16.0-dev.2193+fc517bd01",
+    "go": "go version go1.27.2 linux/amd64",
+    "java": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+    "python": "Python 3.13.5"
+  },
+  "hardware": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           39 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  8\nOn-line CPU(s) list:                     0-7\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Core(TM) i7-9700K CPU @ 3.60GHz\nCPU family:                              6\nModel:                                   158\nThread(s) per core:                      1\nCore(s) per socket:                      8\nSocket(s):                               1\nStepping:                                13\nCPU(s) scaling MHz:                      89%\nCPU max MHz:                             4900.0000\nCPU min MHz:                             800.0000\nBogoMIPS:                                7200.00\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp vnmi md_clear flush_l1d arch_capabilities\nVirtualization:                          VT-x\nL1d cache:                               256 KiB (8 instances)\nL1i cache:                               256 KiB (8 instances)\nL2 cache:                                2 MiB (8 instances)\nL3 cache:                                12 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-7\nVulnerability Gather data sampling:      Mitigation; Microcode\nVulnerability Indirect target selection: Mitigation; Aligned branch/return thunks\nVulnerability Itlb multihit:             KVM: Mitigation: Split huge pages\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Mitigation; Clear CPU buffers; SMT disabled\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Mitigation; Enhanced IBRS\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop\nVulnerability Srbds:                     Mitigation; Microcode\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Mitigation; TSX disabled\nVulnerability Vmscape:                   Mitigation; IBPB before exit to userspace\n",
+  "memory": "MemTotal:       32789044 kB\nMemFree:        22197968 kB\nMemAvailable:   28026600 kB\nBuffers:          519332 kB\nCached:          5954148 kB\nSwapCached:            0 kB\nActive:          6084532 kB\nInactive:        3464660 kB\nActive(anon):    3510640 kB\nInactive(anon):        0 kB\nActive(file):    2573892 kB\nInactive(file):  3464660 kB\nUnevictable:        5916 kB\nMlocked:            5916 kB\nSwapTotal:      33171732 kB\nSwapFree:       33171732 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:             18480 kB\nWriteback:             0 kB\nAnonPages:       2849896 kB\nMapped:          1062168 kB\nShmem:            429880 kB\nKReclaimable:     258436 kB\nSlab:             430712 kB\nSReclaimable:     258436 kB\nSUnreclaim:       172276 kB\nKernelStack:       19692 kB\nPageTables:        32964 kB\nSecPageTables:      2640 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    49566252 kB\nCommitted_AS:   10033576 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      187244 kB\nVmallocChunk:          0 kB\nPercpu:             7296 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:   1646592 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      436876 kB\nDirectMap2M:    15208448 kB\nDirectMap1G:    17825792 kB\n",
+  "environment": {
+    "OMP_WAIT_POLICY": null,
+    "OMP_NUM_THREADS": null,
+    "GOMP_SPINCOUNT": null,
+    "GOMAXPROCS": null
+  },
+  "source_sha256": {
+    "ArrayBench.Mod": "49d7d3de91584bd3bdb1713d7a84d1db48f7384c4bb96ed2c052dd22568ca799",
+    "comparison/build.sh": "706254f77c7a707f1cbdc5e63d3ddf53580d1684c01918cbe11823cb500a5431",
+    "comparison/c/main.c": "cfcb9223f0cc25ed4ebd048d68c13b3edaa2992bb70995ee52b3a532049f394b",
+    "comparison/common/neon_compat.h": "63b0e11e035c59289153252d155fe3bff1510c30b148eec27bd076d8595fb0fe",
+    "comparison/go/main.go": "db1b6fbf92e2d46eb414629a9bad1abec3ef98d7ba70ddc5ede757eacf5af1ce",
+    "comparison/go/sum_amd64.s": "d7e50eb3829d848ca623fe7f22d2522f625bb22ee73eb585b0eac29f03ab5477",
+    "comparison/go/sum_amd64_test.go": "aa911b7c2bc6d845aa07f601eb1c68701a612e697456cd7f2782cd3713cc0e23",
+    "comparison/java/VecSum.java": "5de683236b514a412a64c5c91fd0b530d7a7ffa17ddc7ffa31247a863f32ed8f",
+    "comparison/python/blazing_sum.pyx": "b35b349439da970e9ef26dee47df3b3c441c887c9fb314c0ceba4ed65446654e",
+    "comparison/python/main.py": "4a65072b90acaf78218732926bf3fe51321aae8efeaefb37b57c6a3149e8819d",
+    "comparison/python/setup.py": "b84d2e65b6e1fece5598a9a896c791d4833f31fcd2eb4f6ab38eaf42addf73b6",
+    "comparison/run.py": "df10a51b6baef1db39c622419aa8f4b5e3d4cd53c3a23ecf1c9c2f0a0fcdea3c",
+    "comparison/rust/main.rs": "e2170e5b148b26cf9f9eccebf270e87141765be1c05108e23e857e14a757794d",
+    "comparison/zig/main.zig": "7f3cb9188223353b94d743fb5c220bb5536be9e15dc56f292621ddb73ec84cce"
+  },
+  "minia2": {
+    "head": "d5aceb4225f2419e40644eab21d3acffbdfb3bf8",
+    "dirty": true,
+    "sdk": "/home/andrejjj/Projects/A2/minia2/target/bundle",
+    "source_sha256": {
+      "source/FoxArrayBase.Mod": "508b8557637d01a06fb3ad2287a0d1f683bee02e11aea96850ccbb6847971268",
+      "source/AMD64.FoxArrayBaseOptimized.Mod": "5727d50877419bc27e90cb6865d8d5bcbef9fcb13634d4b5d2a795a3679d389b",
+      "tests/FoxArrayBase.Test": "9018472ed677084dc5b466d4ef6343821790b6a66f7ea51511903c15b04abb91"
+    },
+    "object_sha256": {
+      "FoxArrayBase.GofUu": "d28f8677be511f818ffecf69e3d2bcf59ff2317b3f59a7b33c953293e0bf45c8",
+      "FoxArrayBaseOptimized.GofUu": "9e38d819ee578e7f05607838f3a05db21585dc9b88fe568369c9d38940aeb45e"
+    },
+    "optimization_commit": "39023192139c0b49f18aaade17e40fd065a391b7"
+  },
+  "finished_utc": "2026-10-25T00:40:19.033267+00:00"
+}
