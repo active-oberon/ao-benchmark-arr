@@ -2,7 +2,8 @@
 
 The recovered examples all take approximately 25-26 ms on this Intel
 Core i7-9700K. Active Oberon's AVX2 implementation takes 25.020 ms with eight
-workers, or 23.597 ms after automatic worker selection. The video therefore
+workers, or 23.597 ms after automatic worker selection. The
+[YouTube video](https://www.youtube.com/watch?v=7NAZCrfmLxk) therefore
 does not demonstrate that these languages would take 7 ms on this computer.
 
 All figures below are medians of 500 sums of 200,000,000 signed 32-bit integers
@@ -54,7 +55,7 @@ the eight-worker `SUM` batch was faster than its automatically selected batch.
 
 The video's final table without OBS recording reports Rust 6.822 ms, Zig
 7.019 ms, Go 7.074 ms, C 7.184 ms, Python/Cython 7.270 ms, and Java 10.724 ms
-([`evidence/table.png`](evidence/table.png), local transcript at 18:42 onward).
+([YouTube, 18:42 onward](https://www.youtube.com/watch?v=7NAZCrfmLxk&t=1122s)).
 The quoted Java result of about 16 ms was obtained while recording with OBS.
 Neither value is a cold Java call: the benchmark makes 500 calls in one JVM.
 Our fresh Java processes show the difference directly: a 56.699 or 68.853 ms
@@ -77,6 +78,20 @@ confirms four AVX2 accumulators in the optimized Rust and Zig array loops;
 [`results/simd-kernels.txt`](results/simd-kernels.txt) preserves that evidence.
 The explicit Active Oberon AVX2 kernel achieves essentially the same time as
 those loops when all use eight workers.
+
+At eight workers, the built-in `SUM` is about 1.8x slower than the explicit
+kernel. Its scalar loop adds one integer at a time to one accumulator, so
+successive additions form a dependency chain. The AVX2 kernel processes 32
+integers per main-loop iteration with four independent vector accumulators,
+reducing loop overhead and exposing independent work to the CPU. Both paths
+use the same Active Oberon worker pool; the selected reduction is what changes.
+
+The conclusion is specific to the tested MiniA2 library implementation:
+high-level `SUM` syntax does not currently select a vectorized integer reduction.
+It does not show that Active Oberon inherently requires handwritten assembly
+for competitive performance. Optimizing the library reduction would preserve
+`SUM(...)` in application code. Once the optimized loops approach the inferred
+memory-bandwidth limit, wider instructions need not yield proportional speedups.
 
 ## Validation and reproducibility
 

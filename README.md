@@ -1,7 +1,8 @@
 # Active Oberon array sum benchmark
 
-Recovered C, Rust, Zig, Go, Java, and Python/Cython video examples and the
-reproducible local comparison are in [comparison/README.md](comparison/README.md).
+Recovered C, Rust, Zig, Go, Java, and Python/Cython examples from the
+[YouTube video](https://www.youtube.com/watch?v=7NAZCrfmLxk) and the reproducible
+comparison are in [comparison/README.md](comparison/README.md).
 
 The workload matches the screenshots: 200,000,000 `SIGNED32` elements, each set
 to 2, and 500 timed sums. The data occupies 800,000,000 bytes and the expected
@@ -20,6 +21,20 @@ In the local MiniA2 SDK, the `SUM` operator for `SIGNED32` calls the scalar
 does not automatically make this particular reduction use SIMD instructions.
 `FoxArrayBaseOptimized` is linked for the standard array runtime optimizations;
 its SSE optimizations do not replace this integer reduction.
+
+With eight workers on the tested Intel Core i7-9700K, built-in `SUM` took
+44.834 ms versus 25.020 ms for the AVX2 kernel, about a 1.8x difference.
+The scalar loop adds one integer at a time to a single accumulator; the AVX2
+kernel uses four independent vector accumulators and processes 32 integers
+per main-loop iteration. Rust and Zig obtain vector loops from their compilers
+without handwritten assembly. This exposes a limitation of the tested MiniA2
+`SUM` implementation, not an inherent limitation of Active Oberon.
+
+The optimized implementations cluster around 25-26 ms, consistent with a
+memory-bandwidth limit when reading 800 MB per sum (about 32 GB/s at 25 ms).
+This limit is inferred from timings, not verified with hardware counters.
+Optimizing the library's `SUM` would let application code retain `SUM(...)`
+without its own assembly kernel. See [measurements and limits](comparison/RESULTS.md).
 
 Both modes share persistent active objects and synchronize with `EXCLUSIVE`
 and `AWAIT`. Each worker reads a disjoint range. Workers are created before

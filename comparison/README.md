@@ -1,7 +1,9 @@
 # Recovered video benchmarks
 
-These programs reproduce the summation examples in the local video
-`../video/*[7NAZCrfmLxk].webm`. Extracted source frames are in `evidence/`.
+These programs reproduce the summation examples in the
+[YouTube video](https://www.youtube.com/watch?v=7NAZCrfmLxk).
+The source notes below identify the relevant timestamps and frame names;
+extracted frames are optional working files and are not included in Git.
 They use 200,000,000 signed 32-bit integers filled with 2, an 800,000,000-byte
 array, 500 timed sums, and the expected result 400,000,000. Allocation and
 initialization happen outside the timer. Every timed result is checked.
@@ -68,6 +70,14 @@ selection to eight; the existing source, kernels, calibration, and warmups are
 preserved. Generated sources and binaries are under `build/`.
 
 ## Measurement protocol and limits
+
+With eight workers, built-in Active Oberon `SUM` took 44.834 ms versus
+25.020 ms for its AVX2 kernel; the other implementations took about 25-26 ms.
+The tested MiniA2 `SIGNED32` reduction uses a scalar loop with one accumulator,
+whereas the explicit kernel uses four independent AVX2 accumulators. Rust and
+Zig receive vectorized loops from their compilers. The gap concerns this
+library implementation, not a requirement to write application code in assembly.
+See [RESULTS.md](RESULTS.md) for the measurements and memory-bandwidth inference.
 
 `run.py run` executes one program at a time on this machine:
 
